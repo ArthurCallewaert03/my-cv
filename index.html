@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Arthur Callewaert - engineering mind, business perspective. Business Analytics & AI student at Vlerick, exploring graduate opportunities in analytics and AI.">
     <meta name="theme-color" content="#172e40">
+    <meta name="apple-mobile-web-app-title" content="Arthur Callewaert">
+    <link rel="apple-touch-icon" href="assets/site-icon.png">
+    <link rel="icon" type="image/png" href="assets/site-icon.png">
+    <link rel="manifest" href="site.webmanifest">
     <title>Arthur Callewaert | Engineering mind. Business perspective.</title>
     <style>
         :root { color-scheme: light; --ink: #172e40; --muted: #52616b; --paper: #f5f4ef; --line: #dcded9; --sage: #687d70; --gold: #8a6b32; }
@@ -48,6 +52,15 @@
         .cv-dialog-close { min-width: 44px; min-height: 44px; font-size: 22px; color: var(--ink); border: 1px solid var(--line); border-radius: 4px; background: transparent; }
         .cv-dialog-close:hover { background: #e8eae5; }
         .cv-dialog .actions { justify-content: center; }
+        .quick-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; }
+        .save-phone-button { border: 0; padding: 0; background: transparent; color: var(--ink); cursor: pointer; }
+        .save-phone-button:hover { text-decoration: underline; text-underline-offset: 5px; }
+        .phone-guide { text-align: left; margin-top: 22px; }
+        .phone-guide h3 { margin: 0 0 8px; font-size: 15px; }
+        .phone-guide ol { padding-left: 22px; margin: 0 0 22px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+        .phone-guide li { padding-left: 3px; margin-bottom: 5px; }
+        .phone-guide strong { color: var(--ink); }
+        .site-address { display: block; overflow-wrap: anywhere; padding: 12px; border: 1px solid var(--line); border-radius: 4px; font-size: 13px; line-height: 1.6; text-decoration: underline; text-underline-offset: 3px; }
         .button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; padding: 12px 18px; border: 1px solid var(--ink); border-radius: 4px; font-size: 14px; font-weight: 600; transition: background .18s, color .18s; }
         .button-primary { color: #fff; background: var(--ink); }
         .button-primary:hover { background: #2c4d64; }
@@ -59,6 +72,14 @@
         svg { width: 18px; height: 18px; flex-shrink: 0; }
         .quiet-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 14px; }
         .hero .quiet-link { margin-top: 8px; }
+        .hero .actions { gap: 12px; }
+        .hero .button { border-radius: 6px; }
+        .quick-actions { gap: 0; margin-top: 10px; }
+        .hero .quick-actions > .quiet-link { position: relative; margin-top: 0; padding: 0 16px; color: var(--muted); font-size: 13px; line-height: 1.4; }
+        .hero .quick-actions > .quiet-link:first-child { padding-left: 0; }
+        .hero .quick-actions > .quiet-link + .quiet-link::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); height: 14px; border-left: 1px solid #c8ceca; }
+        .hero .quick-actions > .quiet-link:hover { color: var(--ink); }
+        .quick-actions svg { width: 16px; height: 16px; }
         .portrait { margin: 0; position: relative; padding: 0 12px 12px 0; }
         .portrait::before { content: ""; position: absolute; inset: 18px 0 0 18px; border: 1px solid #b7beb9; border-radius: 5px; }
         .portrait img { display: block; position: relative; width: 100%; height: auto; aspect-ratio: 4 / 4.35; object-fit: cover; object-position: center; border-radius: 4px; }
@@ -138,12 +159,14 @@
             .portrait { grid-column: 2; grid-row: 1 / span 2; padding: 0 6px 6px 0; }
             .portrait::before { inset: 8px 0 0 8px; }
             .portrait img { aspect-ratio: 1; }
-            .hero-copy > .tagline, .hero-copy > .role, .hero-copy > .intro, .hero-copy > .actions, .hero-copy > .quiet-link { grid-column: 1 / -1; }
+            .hero-copy > .tagline, .hero-copy > .role, .hero-copy > .intro, .hero-copy > .actions, .hero-copy > .quiet-link, .hero-copy > .quick-actions { grid-column: 1 / -1; }
             .tagline { font-size: 24px; margin-bottom: 10px; }
             .role { font-size: 14px; margin-bottom: 14px; }
             .intro { font-size: 15px; }
             .actions { margin-top: 20px; }
             .hero .quiet-link { justify-self: start; }
+            .quick-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .hero .quick-actions > .quiet-link { width: 100%; padding-right: 10px; padding-left: 10px; justify-self: stretch; gap: 6px; }
             .journey { padding: 18px 0; }
             .journey ol { gap: 10px; flex-wrap: wrap; }
             .journey li { font-size: 12px; gap: 6px; }
@@ -192,9 +215,9 @@
                     <p class="intro">My path runs from electronics and ICT engineering to data science and business analytics. I enjoy figuring out how things work-and how data can make them work better.</p>
                     <div class="actions">
                         <a class="button button-linkedin" href="https://www.linkedin.com/in/arthur-callewaert"><span class="linkedin-icon" aria-hidden="true">in</span>LinkedIn</a>
-                        <span class="contact-actions"><a class="button button-primary" href="arthur-callewaert.vcf" download>Save my contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg></a><a class="button button-secondary" href="assets/cv-scan.png" data-cv-scan aria-haspopup="dialog" aria-controls="cv-scan-dialog">CV scan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/><path d="M7 7h3v3H7zm7 0h3v3h-3zM7 14h3v3H7zm7 0h3v3h-3z"/></svg></a></span>
+                        <span class="contact-actions"><a class="button button-primary" href="arthur-callewaert.vcf" download>Save my contact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg></a></span>
                     </div>
-                    <a class="quiet-link" href="cv3_30_sept.pdf">View my CV <span aria-hidden="true">↗</span></a>
+                    <div class="quick-actions"><a class="quiet-link" href="cv3_30_sept.pdf">View my CV <span aria-hidden="true">↗</span></a><a class="quiet-link" href="assets/cv-scan.png" data-cv-scan aria-haspopup="dialog" aria-controls="cv-scan-dialog">CV scan <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 3H3v6m12-6h6v6M3 15v6h6m12-6v6h-6"/><path d="M7 7h3v3H7zm7 0h3v3h-3zM7 14h3v3H7zm7 0h3v3h-3z"/></svg></a><button class="quiet-link save-phone-button" type="button" data-save-phone aria-haspopup="dialog" aria-controls="save-phone-dialog" hidden>Save page <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4M12 6v7m-3-3 3 3 3-3"/></svg></button></div>
                 </div>
                 <figure class="portrait"><img src="Arthur%20Callewaert%20336213.jpg" alt="Portrait of Arthur Callewaert" width="950" height="950" fetchpriority="high"></figure>
             </section>
@@ -251,6 +274,7 @@
                 </div>
                 <div class="share-area">
                     <p class="share-hint">Meeting someone new? Keep this page handy.</p>
+                    <button class="quiet-link save-phone-button" type="button" data-save-phone aria-haspopup="dialog" aria-controls="save-phone-dialog" hidden>Save this page to your phone <span aria-hidden="true">↗</span></button>
                     <details class="share">
                         <summary>Show my networking QR code</summary>
                         <div class="share-content"><img class="qr" src="assets/networking-qr.svg" alt="QR code linking to Arthur Callewaert’s personal webpage" width="140" height="140"><div><p>Scan to open this page on another phone, or save the code for your next event.</p><a class="quiet-link" href="assets/networking-qr.png" download="arthur-callewaert-qr.png">Download QR code <span aria-hidden="true">↓</span></a></div></div>
@@ -267,7 +291,72 @@
         <img src="assets/cv-scan.png" alt="QR code supplied by Arthur Callewaert for CV scanning" width="152" height="154">
         <div class="actions"><a class="button button-primary" href="cv3_30_sept.pdf">View my CV <span aria-hidden="true">↗</span></a><a class="quiet-link" href="assets/cv-scan.png" download="arthur-callewaert-cv-qr.png">Download QR <span aria-hidden="true">↓</span></a></div>
     </dialog>
+    <dialog class="cv-dialog" id="save-phone-dialog" aria-labelledby="save-phone-title" aria-describedby="save-phone-description">
+        <form method="dialog"><button class="cv-dialog-close" aria-label="Close save to phone instructions" autofocus>×</button></form>
+        <h2 id="save-phone-title">Keep my page handy</h2>
+        <p id="save-phone-description">Add a shortcut to your home screen so you can find me again after the event.</p>
+        <div class="phone-guide">
+            <h3>iPhone · Safari</h3>
+            <ol><li>Open this page in <strong>Safari</strong>.</li><li>Tap <strong>Share</strong> (you may find it in the page menu).</li><li>Choose <strong>Add to Home Screen</strong>, then <strong>Add</strong>.</li></ol>
+            <h3>Android · Chrome</h3>
+            <ol><li>Open this page in <strong>Chrome</strong>.</li><li>Tap the <strong>three-dot menu</strong>, then <strong>Add to home screen</strong> or <strong>Install and create shortcut</strong>.</li><li>Choose <strong>Create shortcut</strong> if shown, then <strong>Add</strong>.</li></ol>
+        </div>
+        <p>On a computer? Open this address on your phone first:</p>
+        <a class="site-address" href="https://arthurcallewaert03.github.io/my-cv/">arthurcallewaert03.github.io/my-cv/</a>
+    </dialog>
     <script>
+        const savePhoneDialog = document.getElementById('save-phone-dialog');
+        const savePhoneButtons = [...document.querySelectorAll('[data-save-phone]')];
+        const savePhoneLabels = new Map(savePhoneButtons.map(button => [button, button.firstChild.textContent]));
+        let installPrompt = null;
+        const alreadyInstalled = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+        window.addEventListener('beforeinstallprompt', event => {
+            event.preventDefault();
+            if (alreadyInstalled()) return;
+            installPrompt = event;
+            savePhoneButtons.forEach(button => {
+                button.hidden = false;
+                button.firstChild.textContent = 'Save page ';
+                button.removeAttribute('aria-controls');
+            });
+        });
+        window.addEventListener('appinstalled', () => {
+            installPrompt = null;
+            savePhoneButtons.forEach(button => { button.hidden = true; });
+            if (savePhoneDialog.open) savePhoneDialog.close();
+        });
+        if (typeof savePhoneDialog.showModal === 'function') {
+            savePhoneButtons.forEach(button => {
+                button.hidden = alreadyInstalled();
+                button.addEventListener('click', async () => {
+                    if (!installPrompt) {
+                        savePhoneDialog.showModal();
+                        return;
+                    }
+                    const prompt = installPrompt;
+                    installPrompt = null;
+                    savePhoneButtons.forEach(item => { item.disabled = true; });
+                    try {
+                        await prompt.prompt();
+                        await prompt.userChoice;
+                    } catch {
+                        savePhoneDialog.showModal();
+                    } finally {
+                        savePhoneButtons.forEach(item => {
+                            item.disabled = false;
+                            item.setAttribute('aria-controls', 'save-phone-dialog');
+                            item.firstChild.textContent = savePhoneLabels.get(item);
+                        });
+                    }
+                });
+            });
+            savePhoneDialog.addEventListener('click', event => {
+                const bounds = savePhoneDialog.getBoundingClientRect();
+                if (event.target === savePhoneDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) {
+                    savePhoneDialog.close();
+                }
+            });
+        }
         const cvDialog = document.getElementById('cv-scan-dialog');
         if (typeof cvDialog.showModal === 'function') {
             document.querySelectorAll('[data-cv-scan]').forEach(link => {
