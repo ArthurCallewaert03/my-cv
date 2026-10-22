@@ -1,0 +1,8 @@
+.editor-home { width:min(1000px,calc(100% - 48px)); margin:64px auto; }
+.editor-home h1 { font-size:clamp(38px,6vw,64px); margin-top:24px; }
+.editor-home .intro { max-width:650px; }
+.editor-open { margin:28px 0 12px; }
+.editor-note { color:var(--muted); max-width:780px; font-size:14px; line-height:1.8; }
+.editor-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:38px 0 28px; }
+.editor-cards h2 { font:26px Georgia,serif; margin:0 0 16px; }
+@media(max-width:760px) { .editor-home{margin:32px auto;} .editor-cards{grid-template-columns:1fr;} }

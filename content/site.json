@@ -1,0 +1,106 @@
+{
+  "profile": {
+    "name": "Arthur Callewaert",
+    "heading": "Arthur\nCallewaert",
+    "tagline": "Engineering mind.\nBusiness perspective.",
+    "role": "Business Analytics & AI student at Vlerick",
+    "intro": "My path runs from electronics and ICT engineering to data science and business analytics. I enjoy figuring out how things work-and how data can make them work better.",
+    "portrait": "Arthur%20Callewaert%20336213.jpg",
+    "portraitAlt": "Portrait of Arthur Callewaert",
+    "email": "arthur.callewaert03@gmail.com",
+    "cv": "cv3_30_sept.pdf",
+    "contactFile": "arthur-callewaert.vcf",
+    "cvQr": "assets/cv-scan.png",
+    "pageTitle": "Arthur Callewaert | Engineering mind. Business perspective.",
+    "description": "Arthur Callewaert - engineering mind, business perspective. Business Analytics & AI student at Vlerick, exploring graduate opportunities in analytics and AI.",
+    "siteUrl": "https://arthurcallewaert.com/",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/arthur-callewaert",
+        "enabled": true
+      }
+    ]
+  },
+  "journey": [
+    "Engineering",
+    "Data science",
+    "Business & AI"
+  ],
+  "work": {
+    "enabled": true,
+    "title": "Ideas, put to work.",
+    "note": "Also explored: resale price prediction, financial data pipelines, and activity detection using sensor data.",
+    "projects": [
+      {
+        "enabled": true,
+        "label": "Featured project",
+        "title": "Regulatory Watch",
+        "description": "Automated regulatory monitoring for a multinational bank. A practical data challenge: keeping track of regulatory developments as information changes.",
+        "tags": [
+          "Automation",
+          "Regulatory monitoring",
+          "Business analytics"
+        ],
+        "linkLabel": "Let’s talk about the project",
+        "url": "mailto:arthur.callewaert03@gmail.com?subject=Let%27s%20talk%20about%20Regulatory%20Watch",
+        "highlight": false,
+        "note": ""
+      },
+      {
+        "enabled": true,
+        "label": "2026 · Winner",
+        "title": "Everest Analytics\nData Challenge",
+        "description": "A highlight from my analytics journey: winning the Everest Analytics Data Challenge 2026 (Agristo).",
+        "tags": [],
+        "linkLabel": "",
+        "url": "",
+        "highlight": true,
+        "note": "Agristo · Analytics challenge"
+      }
+    ]
+  },
+  "about": {
+    "enabled": true,
+    "title": "Curiosity doesn’t clock out.",
+    "text": "I play hockey, golf, and padel, and have coached hockey teams. At home, you’ll find me cooking or tinkering with 3D printing, home servers, and smart home integrations.",
+    "interests": [
+      "Hockey & coaching",
+      "Cooking",
+      "3D printing",
+      "Smart homes"
+    ],
+    "opportunityTitle": "Graduate roles in analytics & AI.",
+    "opportunityText": "I’m looking for a team where I can bring engineering and data science to business problems. If that sounds like your world, I’d like to hear about it.",
+    "opportunityLinkLabel": "Talk opportunities",
+    "opportunityUrl": "mailto:arthur.callewaert03@gmail.com?subject=Graduate%20opportunities%20in%20analytics%20and%20AI"
+  },
+  "conversation": {
+    "enabled": true,
+    "title": "Next time we meet, ask me about…",
+    "links": [
+      {
+        "label": "Hockey coaching",
+        "url": "mailto:arthur.callewaert03@gmail.com?subject=Let%27s%20talk%20hockey%20coaching",
+        "enabled": true
+      },
+      {
+        "label": "Home servers",
+        "url": "mailto:arthur.callewaert03@gmail.com?subject=Let%27s%20talk%20home%20servers",
+        "enabled": true
+      },
+      {
+        "label": "Cooking",
+        "url": "mailto:arthur.callewaert03@gmail.com?subject=Let%27s%20talk%20cooking",
+        "enabled": true
+      }
+    ]
+  },
+  "contact": {
+    "title": "Good to meet you.\nLet’s stay in touch.",
+    "text": "A project, an opportunity, or something we talked about-send me a note.",
+    "buttonLabel": "Email me",
+    "subject": "Following up after meeting"
+  },
+  "sections": []
+}

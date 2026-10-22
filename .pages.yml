@@ -1,0 +1,440 @@
+{
+  "media": [
+    {
+      "name": "images",
+      "label": "Images",
+      "input": "assets/uploads/images",
+      "output": "assets/uploads/images",
+      "extensions": [
+        "jpg",
+        "jpeg",
+        "png",
+        "webp"
+      ],
+      "rename": "safe"
+    },
+    {
+      "name": "documents",
+      "label": "Documents",
+      "input": "assets/uploads/documents",
+      "output": "assets/uploads/documents",
+      "extensions": [
+        "pdf",
+        "vcf"
+      ],
+      "rename": "safe"
+    }
+  ],
+  "content": [
+    {
+      "name": "website",
+      "label": "Edit my website",
+      "type": "file",
+      "path": "content/site.json",
+      "fields": [
+        {
+          "name": "profile",
+          "label": "Introduction, links and downloads",
+          "type": "object",
+          "fields": [
+            {
+              "name": "name",
+              "label": "Full name",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "heading",
+              "label": "Display name (line breaks allowed)",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "tagline",
+              "label": "Tagline",
+              "type": "text"
+            },
+            {
+              "name": "role",
+              "label": "Current role / studies",
+              "type": "string"
+            },
+            {
+              "name": "intro",
+              "label": "Introduction",
+              "type": "text"
+            },
+            {
+              "name": "portrait",
+              "label": "Portrait",
+              "type": "image",
+              "options": {
+                "media": "images"
+              }
+            },
+            {
+              "name": "portraitAlt",
+              "label": "Portrait description",
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "label": "Public email",
+              "type": "string",
+              "required": true,
+              "pattern": {
+                "regex": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                "message": "Enter an email address."
+              }
+            },
+            {
+              "name": "cv",
+              "label": "CV document",
+              "type": "file",
+              "options": {
+                "media": "documents"
+              }
+            },
+            {
+              "name": "contactFile",
+              "label": "Contact card",
+              "type": "file",
+              "options": {
+                "media": "documents"
+              }
+            },
+            {
+              "name": "cvQr",
+              "label": "CV QR image (replace when its destination changes)",
+              "type": "image",
+              "options": {
+                "media": "images"
+              }
+            },
+            {
+              "name": "pageTitle",
+              "label": "Browser title",
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "label": "Search description",
+              "type": "text"
+            },
+            {
+              "name": "siteUrl",
+              "label": "Share address",
+              "type": "string",
+              "pattern": {
+                "regex": "^https://[^\\s]+$",
+                "message": "Use an HTTPS URL."
+              }
+            },
+            {
+              "name": "links",
+              "label": "Main links — add, remove or reorder",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "enabled",
+                  "label": "Show this link",
+                  "type": "boolean"
+                },
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "url",
+                  "label": "Link URL",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^(https://[^\\s]+|mailto:[^\\s]+)$",
+                    "message": "Use a full https:// link or mailto: email link."
+                  },
+                  "required": true
+                }
+              ],
+              "list": true
+            }
+          ]
+        },
+        {
+          "name": "journey",
+          "label": "Academic journey",
+          "type": "string",
+          "list": true
+        },
+        {
+          "name": "work",
+          "label": "Projects",
+          "type": "object",
+          "fields": [
+            {
+              "name": "enabled",
+              "label": "Show work section",
+              "type": "boolean"
+            },
+            {
+              "name": "title",
+              "label": "Section title",
+              "type": "string"
+            },
+            {
+              "name": "note",
+              "label": "Text below projects",
+              "type": "text"
+            },
+            {
+              "name": "projects",
+              "label": "Project cards — add, remove or reorder",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "enabled",
+                  "label": "Show this project",
+                  "type": "boolean"
+                },
+                {
+                  "name": "label",
+                  "label": "Small label",
+                  "type": "string"
+                },
+                {
+                  "name": "title",
+                  "label": "Project title",
+                  "type": "text",
+                  "required": true
+                },
+                {
+                  "name": "description",
+                  "label": "Description",
+                  "type": "text"
+                },
+                {
+                  "name": "tags",
+                  "label": "Tags",
+                  "type": "string",
+                  "list": true
+                },
+                {
+                  "name": "linkLabel",
+                  "label": "Link text",
+                  "type": "string"
+                },
+                {
+                  "name": "url",
+                  "label": "Link URL",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^(https://[^\\s]+|mailto:[^\\s]+)$",
+                    "message": "Use a full https:// link or mailto: email link."
+                  },
+                  "required": false
+                },
+                {
+                  "name": "highlight",
+                  "label": "Highlight this card",
+                  "type": "boolean"
+                },
+                {
+                  "name": "note",
+                  "label": "Small note",
+                  "type": "string"
+                }
+              ],
+              "list": true
+            }
+          ]
+        },
+        {
+          "name": "about",
+          "label": "About and opportunities",
+          "type": "object",
+          "fields": [
+            {
+              "name": "enabled",
+              "label": "Show about section",
+              "type": "boolean"
+            },
+            {
+              "name": "title",
+              "label": "About heading",
+              "type": "string"
+            },
+            {
+              "name": "text",
+              "label": "About you",
+              "type": "text"
+            },
+            {
+              "name": "interests",
+              "label": "Interests",
+              "type": "string",
+              "list": true
+            },
+            {
+              "name": "opportunityTitle",
+              "label": "Opportunity heading",
+              "type": "string"
+            },
+            {
+              "name": "opportunityText",
+              "label": "Opportunity description",
+              "type": "text"
+            },
+            {
+              "name": "opportunityLinkLabel",
+              "label": "Opportunity link text",
+              "type": "string"
+            },
+            {
+              "name": "opportunityUrl",
+              "label": "Opportunity link",
+              "type": "string",
+              "pattern": {
+                "regex": "^(https://[^\\s]+|mailto:[^\\s]+)$",
+                "message": "Use a full https:// link or mailto: email link."
+              },
+              "required": false
+            }
+          ]
+        },
+        {
+          "name": "conversation",
+          "label": "Conversation starters",
+          "type": "object",
+          "fields": [
+            {
+              "name": "enabled",
+              "label": "Show conversation starters",
+              "type": "boolean"
+            },
+            {
+              "name": "title",
+              "label": "Heading",
+              "type": "string"
+            },
+            {
+              "name": "links",
+              "label": "Conversation links",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "enabled",
+                  "label": "Show this link",
+                  "type": "boolean"
+                },
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "url",
+                  "label": "Link URL",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^(https://[^\\s]+|mailto:[^\\s]+)$",
+                    "message": "Use a full https:// link or mailto: email link."
+                  },
+                  "required": true
+                }
+              ],
+              "list": true
+            }
+          ]
+        },
+        {
+          "name": "contact",
+          "label": "Contact section",
+          "type": "object",
+          "fields": [
+            {
+              "name": "title",
+              "label": "Contact heading",
+              "type": "text"
+            },
+            {
+              "name": "text",
+              "label": "Contact text",
+              "type": "text"
+            },
+            {
+              "name": "buttonLabel",
+              "label": "Email button text",
+              "type": "string"
+            },
+            {
+              "name": "subject",
+              "label": "Email subject",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "sections",
+          "label": "Extra sections — add, remove or reorder",
+          "type": "object",
+          "fields": [
+            {
+              "name": "enabled",
+              "label": "Show this section",
+              "type": "boolean"
+            },
+            {
+              "name": "label",
+              "label": "Small section label",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "Heading",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "text",
+              "label": "Description",
+              "type": "text"
+            },
+            {
+              "name": "links",
+              "label": "Links",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "enabled",
+                  "label": "Show this link",
+                  "type": "boolean"
+                },
+                {
+                  "name": "label",
+                  "label": "Button text",
+                  "type": "string",
+                  "required": true
+                },
+                {
+                  "name": "url",
+                  "label": "Link URL",
+                  "type": "string",
+                  "pattern": {
+                    "regex": "^(https://[^\\s]+|mailto:[^\\s]+)$",
+                    "message": "Use a full https:// link or mailto: email link."
+                  },
+                  "required": true
+                }
+              ],
+              "list": true
+            }
+          ],
+          "list": true,
+          "description": "Extra sections appear before Contact. Use plain text; HTML is not executed."
+        }
+      ]
+    }
+  ]
+}
