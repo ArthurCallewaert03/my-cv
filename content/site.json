@@ -30,7 +30,7 @@
   "work": {
     "enabled": true,
     "title": "Ideas, put to work.",
-    "note": "Also explored: resale price prediction, financial data pipelines, and activity detection using sensor data.",
+    "note": "Also explored: resale price prediction and financial data pipelines.",
     "projects": [
       {
         "enabled": true,
@@ -72,6 +72,21 @@
         "url": "",
         "highlight": true,
         "note": "Agristo · Analytics challenge"
+      },
+      {
+        "enabled": true,
+        "label": "Animal health research",
+        "title": "Goat Activity & Health Monitoring",
+        "description": "Explored unsupervised learning to detect goat activity patterns from sensor data, with the aim of identifying behavioural changes that could signal disease earlier and support animal health monitoring.",
+        "tags": [
+          "Unsupervised learning",
+          "Activity detection",
+          "Animal health"
+        ],
+        "linkLabel": "",
+        "url": "",
+        "highlight": false,
+        "note": ""
       }
     ]
   },
