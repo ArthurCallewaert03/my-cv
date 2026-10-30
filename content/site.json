@@ -49,6 +49,21 @@
       },
       {
         "enabled": true,
+        "label": "28 October 2026 · Winner",
+        "title": "Data for Good Challenge",
+        "description": "Won Emergent Leuven’s Data for Good Challenge with a team-built prototype for Artsen Zonder Grenzen (Médecins Sans Frontières, MSF). We combined retrieval-augmented generation (RAG) with a knowledge graph to help staff and volunteers find relevant reports, protocols, and lessons from past crises faster, designed for local use without internet access.",
+        "tags": [
+          "RAG",
+          "Knowledge graphs",
+          "Humanitarian aid"
+        ],
+        "linkLabel": "About the challenge",
+        "url": "https://dataforgood.be/",
+        "highlight": true,
+        "note": ""
+      },
+      {
+        "enabled": true,
         "label": "2026 · Winner",
         "title": "Everest Analytics\nData Challenge",
         "description": "A highlight from my analytics journey: winning the Everest Analytics Data Challenge 2026 (Agristo).",
