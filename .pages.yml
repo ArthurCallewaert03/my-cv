@@ -169,7 +169,7 @@
         },
         {
           "name": "work",
-          "label": "Projects",
+          "label": "Homepage — Ideas, put to work",
           "type": "object",
           "fields": [
             {
@@ -189,7 +189,7 @@
             },
             {
               "name": "projects",
-              "label": "Project cards — add, remove or reorder",
+              "label": "Short project summaries",
               "type": "object",
               "fields": [
                 {
@@ -243,11 +243,81 @@
                   "name": "note",
                   "label": "Small note",
                   "type": "string"
+                },
+                {
+                  "name": "projectId",
+                  "label": "Matching project ID on Projects page (optional)",
+                  "type": "string"
                 }
               ],
               "list": true
             }
           ]
+        },
+        {
+          "name": "projectDirectory",
+          "label": "Projects page — full entries",
+          "type": "object",
+          "fields": [
+            {
+              "name": "enabled",
+              "label": "Show this project",
+              "type": "boolean"
+            },
+            {
+              "name": "label",
+              "label": "Small label",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "label": "Project title",
+              "type": "text",
+              "required": true
+            },
+            {
+              "name": "description",
+              "label": "Description",
+              "type": "text"
+            },
+            {
+              "name": "tags",
+              "label": "Tags",
+              "type": "string",
+              "list": true
+            },
+            {
+              "name": "linkLabel",
+              "label": "Link text",
+              "type": "string"
+            },
+            {
+              "name": "url",
+              "label": "Link URL",
+              "type": "string",
+              "pattern": {
+                "regex": "^(https://[^\\s]+|mailto:[^\\s]+)$",
+                "message": "Use a full https:// link or mailto: email link."
+              },
+              "required": false
+            },
+            {
+              "name": "highlight",
+              "label": "Highlight this card",
+              "type": "boolean"
+            },
+            {
+              "name": "note",
+              "label": "Small note",
+              "type": "string"
+            },
+            {
+              "name": "projectId",
+              "label": "Project ID for homepage links (keep stable)",
+              "type": "string"
+            }
+          ],
+          "list": true
         },
         {
           "name": "about",

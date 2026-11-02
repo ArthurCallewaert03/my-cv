@@ -66,9 +66,41 @@
     });
   }
 
+  function renderProjects(work, heading) {
+    if (Array.isArray(work.projects)) {
+      const projects = items(work.projects).map(object).filter(item => item.enabled !== false && text(item.title).trim()).map(item => {
+        const card = el('article', 'project' + (item.highlight === true ? ' award' : ''));
+        card.append(el('p','section-label',item.label), el(heading,'',item.title), el('p','',item.description));
+        if (items(item.tags).length) {
+          const tags = el('ul','tags');
+          tags.setAttribute('aria-label','Project themes');
+          tags.append(...items(item.tags).map(tag => el('li','',tag)));
+          card.append(tags);
+        }
+        const id = text(item.projectId).trim();
+        if (id && heading === 'h2') card.id = 'project-' + id;
+        const more = link({label:item.linkLabel,url:item.url});
+        if (more) card.append(more);
+        if (text(item.note)) card.append(el('span','award-note',item.note));
+        return card;
+      });
+      q('.work-grid').replaceChildren(...projects);
+      return projects.length;
+    }
+    return 0;
+  }
+
   function render(data) {
     if (!data || typeof data !== 'object' || Array.isArray(data) || !data.profile) throw new Error('Invalid website content');
     const p = object(data.profile);
+    if (q('#project-directory')) {
+      setText('.brand-label', p.name);
+      const count = renderProjects({projects: items(data.projectDirectory)}, 'h2');
+      const target = Array.from(document.querySelectorAll('.project[id]')).find(card => '#' + encodeURIComponent(card.id) === location.hash);
+      if (target) target.scrollIntoView();
+      q('#project-status').textContent = count ? '' : 'No projects are listed yet.';
+      return;
+    }
     setText('#name', p.heading);
     setText('.brand-label', p.name);
     setText('.tagline', p.tagline);
@@ -110,23 +142,7 @@
     q('.nav a[href="#work"]').hidden = work.enabled === false;
     setText('#work-title', work.title);
     setText('.other-work', work.note);
-    if (Array.isArray(work.projects)) {
-      const projects = items(work.projects).map(object).filter(item => item.enabled !== false && text(item.title).trim()).map(item => {
-        const card = el('article', 'project' + (item.highlight === true ? ' award' : ''));
-        card.append(el('p','section-label',item.label), el('h3','',item.title), el('p','',item.description));
-        if (items(item.tags).length) {
-          const tags = el('ul','tags');
-          tags.setAttribute('aria-label','Project themes');
-          tags.append(...items(item.tags).map(tag => el('li','',tag)));
-          card.append(tags);
-        }
-        const more = link({label:item.linkLabel,url:item.url});
-        if (more) card.append(more);
-        if (text(item.note)) card.append(el('span','award-note',item.note));
-        return card;
-      });
-      q('.work-grid').replaceChildren(...projects);
-    }
+    renderProjects(work, 'h3');
     const about = object(data.about);
     q('#about').hidden = about.enabled === false;
     q('.nav a[href="#about"]').hidden = about.enabled === false;
@@ -171,5 +187,5 @@
   fetch(new URL('content/site.json', root), {credentials:'omit', cache:'no-cache'})
     .then(response => { if (!response.ok) throw new Error('Content unavailable'); return response.json(); })
     .then(render)
-    .catch(() => { console.warn('Website content could not be loaded; showing the saved HTML version.'); });
+    .catch(() => { if (q('#project-status')) q('#project-status').textContent = 'Projects could not be loaded. Please refresh to try again.'; console.warn('Website content could not be loaded; showing the saved HTML version.'); });
 })();
