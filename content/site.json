@@ -141,8 +141,8 @@
     {
       "enabled": true,
       "label": "Featured project",
-      "title": "Regulatory Watch",
-      "description": "For a multinational bank, I worked on automating the monitoring of regulatory developments. The challenge was keeping track of changes over time so the team could review new information.",
+      "title": "Regulatory Watch: Automated Regulatory Monitoring for a Multinational Bank",
+      "description": "Automated regulatory monitoring for a multinational bank.",
       "tags": [
         "Automation",
         "Regulatory monitoring",
@@ -172,9 +172,25 @@
     },
     {
       "enabled": true,
+      "label": "Project",
+      "title": "Price Prediction for Online Resale",
+      "description": "Price prediction model for fraud detection and price suggestions in online resale.",
+      "tags": [
+        "Machine learning",
+        "Fraud detection",
+        "Pricing"
+      ],
+      "linkLabel": "",
+      "url": "",
+      "highlight": false,
+      "note": "",
+      "projectId": "resale-price-prediction"
+    },
+    {
+      "enabled": true,
       "label": "10 March 2026 · Winner",
-      "title": "Everest Analytics\nData Challenge",
-      "description": "I won the 2026 Everest Analytics Data Challenge for the Agristo case.",
+      "title": "Everest Analytics Data Challenge 2026 (Agristo)",
+      "description": "Winner of the Everest Analytics Data Challenge 2026, working on the Agristo case.",
       "tags": [],
       "linkLabel": "",
       "url": "",
@@ -184,12 +200,42 @@
     },
     {
       "enabled": true,
-      "label": "Animal health research",
-      "title": "Goat Activity & Health Monitoring",
-      "description": "I explored how unsupervised learning could identify patterns in goats’ activity from sensor readings without requiring every behaviour to be labelled by hand. The research question was whether changes in those patterns could flag a goat for a closer health check.",
+      "label": "Project",
+      "title": "Financial Data PySpark Pipeline",
+      "description": "Financial data processing pipeline built with PySpark.",
       "tags": [
+        "PySpark",
+        "Data engineering"
+      ],
+      "linkLabel": "",
+      "url": "",
+      "highlight": false,
+      "note": "",
+      "projectId": "financial-data-pyspark"
+    },
+    {
+      "enabled": true,
+      "label": "Project",
+      "title": "NMBS ACRM Project",
+      "description": "ACRM project for NMBS.",
+      "tags": [
+        "NMBS",
+        "ACRM"
+      ],
+      "linkLabel": "",
+      "url": "",
+      "highlight": false,
+      "note": "",
+      "projectId": "nmbs-acrm"
+    },
+    {
+      "enabled": true,
+      "label": "Animal health research",
+      "title": "Goat IoT: Unsupervised Activity Detection",
+      "description": "Explored unsupervised activity detection using accelerometer and temperature data from a bolus to support earlier identification of potential health issues in goats.",
+      "tags": [
+        "IoT",
         "Unsupervised learning",
-        "Activity detection",
         "Animal health"
       ],
       "linkLabel": "",
@@ -197,6 +243,21 @@
       "highlight": false,
       "note": "",
       "projectId": "goat-activity"
+    },
+    {
+      "enabled": true,
+      "label": "Project",
+      "title": "UGent Racing-Team: Modular Sensor Monitoring System",
+      "description": "Modular sensor monitoring system for UGent Racing-Team.",
+      "tags": [
+        "Sensors",
+        "Monitoring"
+      ],
+      "linkLabel": "",
+      "url": "",
+      "highlight": false,
+      "note": "",
+      "projectId": "ugent-racing-sensors"
     }
   ]
 }
