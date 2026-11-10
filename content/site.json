@@ -141,7 +141,7 @@
     {
       "enabled": true,
       "label": "Interactive data project",
-      "title": "RoadLens — Belgian Road Safety",
+      "title": "RoadLens - Belgian Road Safety",
       "description": "An interactive exploration of Belgian injury crashes from 2017 to 2024. Explore locations, road types, severity, vehicles and weather, with data quality limitations explained alongside the charts.",
       "tags": [
         "Data engineering",
