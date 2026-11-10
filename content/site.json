@@ -140,6 +140,22 @@
   "projectDirectory": [
     {
       "enabled": true,
+      "label": "Interactive data project",
+      "title": "RoadLens — Belgian Road Safety",
+      "description": "An interactive exploration of Belgian injury crashes from 2017 to 2024. Explore locations, road types, severity, vehicles and weather, with data quality limitations explained alongside the charts.",
+      "tags": [
+        "Data engineering",
+        "Geospatial analysis",
+        "Interactive dashboard"
+      ],
+      "linkLabel": "Explore the dashboard",
+      "url": "https://arthurcallewaert.com/projects/roadlens/",
+      "highlight": false,
+      "note": "",
+      "projectId": "roadlens"
+    },
+    {
+      "enabled": true,
       "label": "Featured project",
       "title": "Regulatory Watch",
       "description": "For a multinational bank, I worked on automating the monitoring of regulatory developments. The challenge was keeping track of changes over time so the team could review new information.",

@@ -8,5 +8,8 @@
 /content/*
   Cache-Control: no-cache
 
+/projects/roadlens/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; style-src-attr 'unsafe-inline'; img-src 'self'; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests
+
 /admin/*
   X-Robots-Tag: noindex, nofollow
