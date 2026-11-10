@@ -226,10 +226,10 @@
                 },
                 {
                   "name": "url",
-                  "label": "Link URL",
+                  "label": "Link URL (optional)",
                   "type": "string",
                   "pattern": {
-                    "regex": "^(https://[^\\s]+|mailto:[^\\s]+)$",
+                    "regex": "^(|https://[^\\s]+|mailto:[^\\s]+)$",
                     "message": "Use a full https:// link or mailto: email link."
                   },
                   "required": false
@@ -293,10 +293,10 @@
             },
             {
               "name": "url",
-              "label": "Link URL",
+              "label": "Link URL (optional)",
               "type": "string",
               "pattern": {
-                "regex": "^(https://[^\\s]+|mailto:[^\\s]+)$",
+                "regex": "^(|https://[^\\s]+|mailto:[^\\s]+)$",
                 "message": "Use a full https:// link or mailto: email link."
               },
               "required": false
